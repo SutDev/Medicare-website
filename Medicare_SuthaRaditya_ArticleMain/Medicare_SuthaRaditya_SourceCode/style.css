@@ -1,0 +1,1080 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  scroll-behavior: smooth;
+}
+html,
+body {
+    margin-top: 1em;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+  }
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+  }
+  .link-active {
+    color: #2F89FC !important;
+    border-bottom: 2px solid #2F89FC;
+  }
+  .box a {
+    color: white;
+  }
+  .box:hover a {
+    color: #2F89FC;
+  }
+  .scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #1d3557;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.add{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+  /*========================== custom scroll bar ==========================*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+background: #2F89FC;
+border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3BA1DA;
+}
+
+
+/*================ filter tag styling  ================*/
+.controls {
+    padding: 1rem;
+    font-size: 0.1px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.control {
+    width: 100px;
+    margin: 1em 0em;
+    height: 1.3rem;
+    color: #fff ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.control:nth-child(2) {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+.control p {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  width: fit-content;
+  opacity: 0.7;
+  border-bottom: 1.5px solid #fff;
+  transition: .15s ease ;
+}
+.controls .control:hover {
+  cursor: pointer;
+}
+.controls .control:hover p{
+  font-weight: 600;
+  opacity: 1;
+  cursor: pointer;
+  color: #2F89FC !important;
+}
+.active p {
+  font-weight: 600;
+  opacity: 1;
+  color: #2F89FC !important;
+  border-bottom: 2px solid #2F89FC !important;
+}
+
+.mixitup-control-active[data-filter]:after {
+    background: transparent;
+}
+
+.control:first-of-type {
+    border-radius: 3px 0 0 3px;
+}
+
+.control:last-of-type {
+    border-radius: 0 3px 3px 0;
+}
+
+.control[data-filter] + .control[data-sort] {
+    margin-left: .75rem;
+}
+
+.input {
+    display: inline-block;
+    font-size: 1rem;
+    padding: .75rem;
+    margin-left: 1em;
+    border-radius: 2px;
+    right: 3.6em;
+    position: absolute;
+    border: 0 none;
+    background: #f2f4f8;
+    font-family: 'helvetica neue', arial, sans-serif;
+    vertical-align: top;
+}
+.border {
+  border: 1px solid;
+}
+.input input::placeholder {
+  padding-left: 2em;
+}
+.input input:focus::placeholder {
+  padding-left: 0em;
+}
+.input:valid img {
+  display: none;
+}
+.input input:focus {
+  padding-left: 2em;
+}
+.input input {
+    background-color: #f2f4f8;
+    border: 0 none;
+    width: 57px;
+    -webkit-transition: width 1s 0s ease;
+    -moz-transition: width 1s 0s ease;
+    -o-transition: width 1s 0s ease;
+    transition: width 0.45s 0s ease;
+    background-image: url("../Medicare_SuthaRaditya_Assets/magnifying-glass.png");
+    background-position: center;
+    background-position-x: left;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+.input input:focus {
+    width: 300px;
+    /* background-color: #5ecdde; */
+    outline: none;
+}
+.controls button {
+  border: none;
+  background:none ;
+  color: black;
+  margin-bottom: 3em;
+}
+
+.mix,
+.gap {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mix {
+    background: #fff;
+    border-top: .5rem solid currentColor;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+
+
+
+.mix,
+.gap {
+    width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
+}
+
+
+@media screen and (min-width: 541px) {
+    .mix,
+    .gap {
+        width: calc(100%/3 - (((3 - 1) * 1rem) / 3));
+    }
+}
+@media screen and (min-width: 961px) {
+    .mix,
+    .gap {
+        width: calc(100%/4 - (((4 - 1) * 1rem) / 4));
+    }
+}
+@media screen and (min-width: 1281px) {
+    .mix,
+    .gap {
+        width: calc(100%/5 - (((5 - 1) * 1rem) / 5));
+    }
+}
+
+/*================ navbar styling  ================*/
+.navbar .content {
+  max-width: 1900px;
+  width: 94%;
+  margin: auto;
+  padding: 0 30px;
+  transition: 0.35s ease;
+}
+.navbar.sticky .content {
+  width: 80%;
+}
+
+.content{
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 30px;
+  }
+  .navbar{
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    z-index: 2;
+    padding-top: 0.6em;
+    /* padding: 25px 0; */
+    transition: all 0.2s ease;
+    border-bottom: 0.5px solid rgba(0,0,0,0.1);
+  }
+  .navbar .input {
+    display: none;
+    opacity: 0;
+  }
+  .navbar.sticky .input {
+    display: block;
+    opacity: 1;
+  }
+  .navbar.sticky .login-btn {
+    display: none;
+  }
+  .navbar.sticky{
+    background: #fff;
+    /* box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1); */
+  }
+  .navbar.sticky .login-btn{
+    opacity: 0;
+    margin: 0;
+  }
+  .navbar .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar .logo a{
+      color: #000;
+      font-size: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;  
+  }
+  .navbar .logo p{
+    margin-left: 0.5em;
+  }
+  .logo .betterphone {
+      display: flex;
+      align-items:center ;
+      height: 60px;
+      width: 60px;
+  }
+  .navbar .menu-list{
+    display: inline-flex;
+  }
+  .menu-list li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+  .menu-list li a{
+    color: #000;
+    font-size: 16px !important;
+    font-weight: 400;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .menu-list li a:hover{
+    color: #2F89FC;
+  }
+  .menu-list li a::after {
+      content: '';
+      width: 0%;
+      height: 4px;
+      animation: 4s bg infinite;
+      display: block;
+      /* margin-left: 25px; */
+      transition: 0.5s;
+  }
+  .menu-list li a:hover::after{
+      /* width: 75%; */
+  }
+  .navbar .logo span {
+    color: #2F89FC;
+  }
+  .navbar ul li .login-btn {
+    font-weight: 500;
+    margin: 0 1em 0 2em;
+    width: 110px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1.6px solid #2f89fc;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: 0.15s ease-in-out !important;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+  }
+  .navbar ul li .login-btn:hover {
+    background-color: #2F89FC;
+    color: white;
+  }
+  .navbar ul li .login-btn {
+    color: #2f89fc;
+  }
+  .icon{
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  .menu-list .cancel-btn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+  .navbar .logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  @media (max-width: 1230px) {
+    .content{
+      padding: 0 60px;
+    }
+  }
+  @media (max-width: 1000px) {
+    body.disabled{
+      overflow: hidden;
+    }
+    .icon{
+      display: block;
+    }
+    .icon.hide{
+      display: none;
+    }
+    .navbar .menu-list{
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      max-width: 400px;
+      left: -100%;
+      top: 0px;
+      display: block;
+      padding: 40px 0;
+      text-align: center;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+    .navbar.show .menu-list{
+      left: 0%;
+    }
+    .navbar .menu-list li{
+      margin-top: 45px;
+    }
+    .navbar .menu-list li a{
+      font-size: 23px;
+      margin-left: -100%;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .navbar.show .menu-list li a{
+      margin-left: 0px;
+    }
+   
+  }
+  @media (max-width: 600px) {
+    .navbar .logo a{
+      font-size: 18px;
+    }
+    .logo .betterphone {
+      height: 40px;
+      width: 40px;
+    }
+    .navbar .menu-list li a{
+      font-size: 12px;
+    }
+    .navbar .menu-list {
+      max-width: 200px;
+    }
+  }
+
+
+/*================ header styling  ================*/
+  .header {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  .header .container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .header .top-content {
+    width: 100%;
+    height: 50px;
+    color: black;
+    background-color: #fff;
+    margin-bottom: 1em;
+  }
+  .top-content .links a{
+    text-decoration: none;
+    color: black ;
+  }
+  .top-content .links {
+    font-size: 15px;
+    background-color: #fff;
+    width: 100%;
+    height: 20px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+  }
+  .top-content img {
+    width: 15px;
+    height: auto;
+    margin: 0 0.5em;
+    /* opacity: 0.5; */
+  }
+  .header .links a {
+    transition: 0.05s ease;
+  }
+  .header .links a:hover {
+    opacity: 0.6;
+    text-decoration: underline;
+    /* border-bottom: 1px solid; */
+  }
+  .header .article {
+    color: #2F89FC !important;
+  }
+  .header .topic-content {
+    width: 100%;
+    height: 11%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top: 0.5px solid rgba(0,0,0,0.2);
+    border-bottom: 0.5px solid rgba(0,0,0,0.2);
+  }
+  .header .topic-content .title {
+    width: 8em;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    color: #53565A;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: left;
+    transform: translateY(-1.1em);
+  }
+  .header .content {
+    width: 100%;
+    height: auto;
+    margin-left: -2.3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    left: 0;
+    position: absolute;
+  }
+  .header .content .box {
+    width: 12%;
+    height: 35px;   
+    font-weight: 400;
+    margin: 0.1em 0.5em;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    transition: .15s ease;
+    color: white;
+    background-color: #2F89FC;
+  }
+  .header .content .box:hover {
+    cursor: pointer;    
+    background-color: #fff;
+    color: #2F89FC;
+    border: 1.5px solid #2F89FC;
+  }
+  .header .center-content {
+    width: 100%;
+    height: 60%;
+    margin-top: 2em;
+  }
+  .header .bott-content {
+    width: 100%;
+    height: 20%;
+  }
+  .header .center-content .title {
+    width: 100%;
+    height: 15%;
+    font-size: 25px;
+    font-weight: 500;
+    color: #53565A !important;
+  }
+  .header .center-content .content-2 {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+  }
+  .header .center-content .banner {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .header .banner .img {
+    background-color:rgba(0,0,0,0.1);
+    width: 100%;
+    height: 100%;
+    /* background-image: url("assets/fusion-medical-animation-npjP0dCtoxo-unsplash.jpg"); */
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    transition: 0.35s all ease-in-out;
+    position: relative;
+    animation: bg 8s infinite;
+  }
+  @keyframes bg {
+    0% {
+      background-image: url("../Medicare_SuthaRaditya_Assets/covid11.jpg") ;
+    }
+    50% {
+      background-image: url("../Medicare_SuthaRaditya_Assets/covid22.jpg") ;
+    }
+    100% {
+      background-image: url("../Medicare_SuthaRaditya_Assets/covid11.jpg") ;
+    }
+  }
+  .header .banner .desc-txt {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 2em;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0px -5px 10px 0px rgba(0,0,0,0.49);
+    -webkit-box-shadow: 0px -5px 10px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px -5px 10px 0px rgba(0,0,0,0.49);
+    transition: 0.25s ease;
+  }
+  .header .banner:hover .img {
+    cursor: pointer;
+    transform: scale(1.05)
+    rotate(0.5deg);
+  }
+  .header .banner:hover .desc-txt {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: none;
+  }
+  .header .center-content .right-content{
+    width: 30%;
+    padding: 0 1em;
+  }
+  .header .right-content .content-scroll {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .content-scroll::-webkit-scrollbar {
+    width: 10px;
+  }
+  .content-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .content-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  }
+  .content-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.3);
+  }
+  .content-scroll .box:nth-child(1){
+    /* border-top: 1px solid rgba(0,0,0,0.1); */
+  }
+  .content-scroll .box , .content-scroll .box a{
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0.5em;
+    transition: 0.06s ease;
+  }
+  .content-scroll .box a .img-content {
+    width: 25%;
+    height: 100%;
+    border-radius: 5px;
+    background-color:rgba(0,0,0,0.1);
+    display: grid;
+    place-items: center;
+    background-position: center;
+    background-size: cover;
+  }
+  .content-scroll .box .title {
+    width: 75%;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0.2em 1em;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    margin: 0 0.5em;
+    display: grid;
+    place-items: center;
+    transition: .15s ease-in-out;
+  }
+  .content-scroll .box:hover {
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  .content-scroll .box:hover .title {
+    font-size: 14.2px;
+    color: #2F89FC !important;
+  }
+
+  
+/*================ article styling  ================*/
+  .article_content {
+    width: 100%;
+    height: 110vh;
+    display: grid;
+    place-items: center;
+  }
+  .article_content .container {
+    width: 90%;
+    height: 100%;
+    /* border: 1px solid; */
+    position: relative;
+  }
+  .article_content .container .container {
+    width: 100%;
+    margin-top: 5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .article_content .container .mix {
+    width: 280px;
+    height: 320px;
+    border-radius: 5px;
+    margin: 1em 1.5em;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
+  }
+  .article_content .container .mix:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;  
+    /* box-shadow: none; */
+  }
+  .article_content .container .box-1:hover  .title-txt {
+    color: #2F89FC;
+  }
+  .article_content .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .article_content .box {
+    display: flex;
+    flex-direction: column;
+  }
+  .article_content .box .top-content {
+    width: 100%;
+    height: 50%;
+    background-image: url("../Medicare_SuthaRaditya_Assets/covid.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+    /* border: 1px solid; */
+  }
+  .article_content .box .title-txt {
+    font-size: 15.5px !important;
+    margin-top: -0.5em !important;
+    font-weight: 600 !important;
+    overflow-y: hidden;
+  }
+  .article_content .box .bott-content {
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .article_content .box .bott-content .kategori {
+    width: 95%;
+    height: 25%;
+    display: flex; 
+    justify-content: left;
+    align-items: center;
+  }
+  .article_content .kategori p{
+    width: fit-content;
+    margin-left: 1.5em;
+    padding: 0.1em 1em;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #EEF0F7;
+    color: #586BB2;
+    transition: 0.15s ease;
+  }
+  .article_content .box:hover .kategori p {
+    background-color: #3BA1DA;
+    color: white;
+  }
+  .box .bott-content .title-txt {
+    width: 80%;
+    height: 34%;
+    padding: 0.5em 0 0.5em 0em;
+    overflow-x: hidden;
+  }
+  .box .bott-content .desc-txt {
+    width: 80%;
+    height: 41%;
+    padding-top: 0.5em;
+    font-size: 12px;
+    opacity: 0.6;
+    font-weight: 600;
+    /* padding-left: 1.5em; */
+    overflow: hidden;
+  }
+  .top-2 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/box2.webp") !important;
+  }
+  .top-3 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/box3.webp") !important;
+  }
+  .top-4 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/box4.webp") !important;
+  }
+  .top-5 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/box5.webp") !important;
+  }
+  .top-6 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/box6.webp") !important;
+  }
+  .top-7 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/box7.webp") !important;
+  }
+  .top-8 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/box8.webp") !important;
+  }
+  .top-11 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/covid.jpg") !important;
+  }
+  .top-12 {
+    background-image: url("../Medicare_SuthaRaditya_Assets/covid22.jpg") !important;
+  }
+
+  /*================ footer styling  ================*/
+  .footer{
+    padding: 2em 0;
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    background: #F3F9FE;
+  }
+  .footer .main-content{
+    width: 90%;
+    display: flex;
+    font-size: 14px;
+    color: #1d3557 !important;
+  }
+  .footer .main-content .box{
+    flex-basis: 25%;
+    padding: 10px 20px;
+  }
+  .footer .main-content .content-2 {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+  }
+  .footer .main-content .right .desc-text p {
+    color: #1D3557;
+  }
+  .footer .main-content span {
+    color: #2F89FC;
+  }
+  .footer .main-content .logo {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: grid;
+    place-items:center ;
+    border: 2px solid rgba(0,0,0,0.2);
+    /* height: auto; */
+  }
+  .footer .main-content .logo img {
+    width: 50px;
+    height: auto;
+  }
+  .footer .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .footer .box .content-1{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .footer .box .content-1:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #F3F9FE;
+  }
+  .footer .box .content-1:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #2f89fc;
+    top: -10px;
+  }
+  .footer .content-1 {
+    padding:0 0 !important;
+  }
+  .footer .left .content-1 p{
+    padding-top: 1em;
+    text-align: justify;
+  }
+  .footer .left .content-1 .social{
+    margin: 20px 0 0 0;
+  }
+  .footer .left .content-1 .social a{
+    padding: 0 2px;
+  }
+  .footer .left .content-1 .social a span{
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    color: #2F89FC;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .footer .left .content-1 .social a span:hover{
+    background: #2F89FC;
+    color: #fff;
+  }
+  .footer .center .content-1 .fas{
+    font-size: 1.4375rem;
+    background: #Fff;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    color: #2F89FC;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .footer .center .content-1 .place {
+    padding-top: 1em !important;
+  }
+  .footer .center .content-1 .text{
+    color: #1D3557;
+  }
+  .footer .center .content-1 .fas:hover{
+    background: #2f89fc;
+    color: #fff;
+  }
+  .footer .center .content-1 .text{
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .footer .center .content-1 .phone{
+    margin: 15px 0;
+  }
+  .footer .right .content-1 ul {
+    padding-top: 1em !important;
+    padding-left: 1em !important;
+  }
+  .footer .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #F3F9FE;
+  }
+  .footer .bottom span{
+    color: #656565;
+  }
+  .footer .bottom a{
+    color: #2f89fc;
+    text-decoration: none;
+  }
+  .footer .bottom a:hover{
+    text-decoration: underline;
+  }
+  .footer .right .content ul {
+    padding: 0em 2em;
+  }
+  .footer .bottom .content-1 {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 3em;
+  }
+  .footer .right .content-1 ul li{
+    padding: 0.2em 0;
+  }
+  .footer .right .content-1 ul li a {
+    color: #151515;
+    transition: .15s ease-in-out;
+  }
+  .footer .right .content-1 ul li a:hover {
+    color: #2F89FC;
+    text-decoration: underline;
+  }
+  .footer .right .content-2 .title-txt {
+    padding-top: 0.5em;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  .footer .btn a {
+    text-decoration: none;
+    color: white;
+    transition: .15s ease;
+  }
+  .footer .btn:hover a {
+    color: #2F89FC;
+  }
+  .footer .btn {
+    margin-top: 1em;
+    width: 120px;
+    height: 40px;
+    border-radius: 25px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 12px;
+    transition: .15s ease;
+    background-color: #2F89FC;
+  }
+  .footer .btn:hover {
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid #2F89FC;
+    color: #2F89FC;
+  }
+  .article_content .row .bott-content a {
+    text-decoration: none;
+    color: #151515;
+  }
+  .article_content .row .mix:nth-child(1):hover a {
+    text-decoration: none;
+    color: #2F89FC;
+  }
+  .article_content .row .mix:hover a .desc-txt {
+    color: #151515 !important;
+  }
+  .article_content .row .mix a .kategori {
+    transform: translateY(0.1em);
+  }
+  .article_content .row .mix a .title-txt {
+    /* padding: 0 !important; */
+    margin: 0 0 1.7em 1.5em!important;
+  }
+  .article_content .row .mix a .desc-txt {
+    margin: 0 0 1em 1.5em !important;
+    transform: translateY(-2.2em) translateX(0.4em);
+  }
+
+  @media screen and (max-width: 900px) {
+    .footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .footer .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .footer .main-content .box{
+      margin: 5px 0;
+    }
+  }
